@@ -1,85 +1,42 @@
-import "package:flutter/material.dart";
+class Home {
+  // Fieldlar (xususiyatlar)
+  String number;
+  String address;
+  int floors;
+  int numOfRooms;
+  double area;
 
-void main() {
-  runApp(MyApp());
-}
+  // Constructor (konstruktor)
+  Home(this.number, this.address, this.floors, this.numOfRooms, this.area);
 
-class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  // Method: Uy haqida ma'lumotlarni print qilish
+  void printDetails() {
+    print('Uy raqami: $number');
+    print('Manzili: $address');
+    print('Qavatlar soni: $floors');
+    print('Xonalar soni: $numOfRooms');
+    print('Maydoni: $area m²');
+  }
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            "Birinchi",
-            style: TextStyle(
-              color: Colors.indigoAccent,
-              fontWeight: FontWeight.bold,
-              fontSize: 32,
-              fontFamily: "Roboto",
-              decoration: TextDecoration.none,
-            ),
-          ),
-          Text(
-            "Ikkinchi",
-            style: TextStyle(
-              color: Colors.indigoAccent,
-              fontWeight: FontWeight.bold,
-              fontSize: 32,
-              fontFamily: "Roboto",
-              decoration: TextDecoration.none,
-            ),
-          ),
-          Text(
-            "Birinchi",
-            style: TextStyle(
-              color: Colors.indigoAccent,
-              fontWeight: FontWeight.bold,
-              fontSize: 32,
-              fontFamily: "Roboto",
-              decoration: TextDecoration.none,
-            ),
-          ),
-          Text(
-            "Ikkinchi",
-            style: TextStyle(
-              color: Colors.indigoAccent,
-              fontWeight: FontWeight.bold,
-              fontSize: 32,
-              fontFamily: "Roboto",
-              decoration: TextDecoration.none,
-            ),
-          ),
-          Text(
-            "Birinchi",
-            style: TextStyle(
-              color: Colors.indigoAccent,
-              fontWeight: FontWeight.bold,
-              fontSize: 32,
-              fontFamily: "Roboto",
-              decoration: TextDecoration.none,
-            ),
-          ),
-          Text(
-            "Ikkinchi",
-            style: TextStyle(
-              color: Colors.indigoAccent,
-              fontWeight: FontWeight.bold,
-              fontSize: 32,
-              fontFamily: "Roboto",
-              decoration: TextDecoration.none,
-            ),
-          ),
-        ],
-      ),
-    );
+  // Method: Uy haqida xulosani chiqarish
+  void printSizeCategory() {
+    if (numOfRooms >= 10) {
+      print('Juda katta xonadon');
+    } else if (numOfRooms >= 4) {
+      print('Katta uy');
+    } else {
+      print('O\'rtacha kattalikdagi uy');
+    }
   }
 }
 
+void main() {
+  // Home klassidan obyekt yaratish
+  Home myHome = Home('123', 'Tashkent, Chilonzor', 5, 8, 120.5);
 
+  // Ma'lumotlarni chiqarish
+  myHome.printDetails();
 
+  // Uy kattaligi haqida xulosa chiqarish
+  myHome.printSizeCategory();
+}
