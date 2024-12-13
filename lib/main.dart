@@ -1,42 +1,73 @@
-class Home {
-  // Fieldlar (xususiyatlar)
-  String number;
-  String address;
-  int floors;
-  int numOfRooms;
-  double area;
-
-  // Constructor (konstruktor)
-  Home(this.number, this.address, this.floors, this.numOfRooms, this.area);
-
-  // Method: Uy haqida ma'lumotlarni print qilish
-  void printDetails() {
-    print('Uy raqami: $number');
-    print('Manzili: $address');
-    print('Qavatlar soni: $floors');
-    print('Xonalar soni: $numOfRooms');
-    print('Maydoni: $area m²');
-  }
-
-  // Method: Uy haqida xulosani chiqarish
-  void printSizeCategory() {
-    if (numOfRooms >= 10) {
-      print('Juda katta xonadon');
-    } else if (numOfRooms >= 4) {
-      print('Katta uy');
-    } else {
-      print('O\'rtacha kattalikdagi uy');
-    }
-  }
-}
+import "package:flutter/material.dart";
 
 void main() {
-  // Home klassidan obyekt yaratish
-  Home myHome = Home('123', 'Tashkent, Chilonzor', 5, 8, 120.5);
+  runApp(MyApp());
+}
 
-  // Ma'lumotlarni chiqarish
-  myHome.printDetails();
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
 
-  // Uy kattaligi haqida xulosa chiqarish
-  myHome.printSizeCategory();
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            "Egamberdiyeva Nozima",
+            style: TextStyle(
+              color: Colors.indigoAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 32,
+              fontFamily: "Roboto",
+              decoration: TextDecoration.none,
+            ),
+          ),
+          Text(
+            "Buxoro viloyati",
+            style: TextStyle(
+              color: Colors.indigoAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 32,
+              fontFamily: "Roboto",
+              decoration: TextDecoration.none,
+            ),
+          ),
+          Text(
+            "2003-yil",
+            style: TextStyle(
+              color: Colors.indigoAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 32,
+              fontFamily: "Roboto",
+              decoration: TextDecoration.none,
+            ),
+          ),
+          Text(
+            "TATU  talabasi",
+            style: TextStyle(
+              color: Colors.indigoAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 32,
+              fontFamily: "Roboto",
+              decoration: TextDecoration.none,
+            ),
+          ),
+          Text(
+            "Flutter mobile dasturchisi",
+            style: TextStyle(
+              color: Colors.indigoAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 32,
+              fontFamily: "Roboto",
+              decoration: TextDecoration.none,
+
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
